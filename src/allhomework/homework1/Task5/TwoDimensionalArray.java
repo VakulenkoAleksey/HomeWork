@@ -1,9 +1,7 @@
-package HomeWork.HomeWork1.Task5;
+package allhomework.homework1.Task5;
 //Создать двумерный массив из 5 строк по 8 столбцов в каждой из случайных целых чисел из отрезка [-99;99].
 //Вывести массив в консоль.
 //После на отдельной строке вывести в консоль значение максимального элемента этого массива.
-
-import java.util.Arrays;
 
 public class TwoDimensionalArray {
     public static void main(String[] args) {

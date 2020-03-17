@@ -1,4 +1,4 @@
-package HomeWork.HomeWork1.Task1;
+package allhomework.homework1.Task1;
 // Найти наибольший общий делитель (НОД) двух чисел
 
 import java.io.BufferedReader;

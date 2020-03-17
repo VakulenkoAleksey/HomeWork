@@ -1,7 +1,8 @@
-package HomeWork.HomeWork1.Task3;
+package allhomework.homework1.Task3;
+
+import allhomework.homework5.task3.Entry;
 
 import java.util.Arrays;
-import java.util.OptionalDouble;
 
 // Заполните массив на N элементов случайным числами.
 // Выведете максимальное, минимальное и среднее значение.
@@ -14,16 +15,23 @@ public class MaxMin {
         Arrays.sort(array);
         int sum = 0;
         for (int value : array) {
-            System.out.println("Test");
             sum += value;
         }
         double average = (double) sum / array.length;
 
-        double d = Arrays.stream(array).average().getAsDouble();
-
+//        double d = Arrays.stream(array).average().getAsDouble();
+//        System.out.println(d);
         System.out.println("Минимальное число в массиве = " + array[0] + "\n" +
                 "Среднее арифметическое всех элементов массива = " + average + "\n" +
                 "Максимальное число в массиве = " + array[array.length - 1]);
-        System.out.println(d);
+
+        int[] i = new int[5];
+        System.out.println(Arrays.toString(i));
+        for (int j = 0; j < i.length; j++) {
+            if (Arrays.binarySearch(i, j)<0){
+                i[j]=j;
+            }
+        }
+        System.out.println(Arrays.toString(i));
     }
 }
