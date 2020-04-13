@@ -8,10 +8,10 @@ import java.util.Random;
 public class Game {
     private char[][] battlefield1 = new char[10][10];
     private char[][] battlefield2 = new char[10][10];
-    private int singleShip = 4;
-    private int doubleShip = 3;
-    private int tripleShip = 2;
-    private int quadrupleShip = 1;
+    private final int singleShip = 4;
+    private final int doubleShip = 3;
+    private final int tripleShip = 2;
+    private final int quadrupleShip = 1;
 
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     Random random = new Random();
@@ -235,10 +235,27 @@ public class Game {
     }
 
     private boolean checkFire(int y, int x) {
-        if (battlefield2[y][x] == '+') {
-            return false;
-        }
-        return true;
+        return battlefield2[y][x] != '+';
+    }
+
+//    static void methodWide(int i) {
+//        System.out.println("int");
+//    }
+
+//    static void methodWide( Integer i ) {
+//        System.out.println("Integer");
+//    }
+    static void methodWide( Short i ) {
+        System.out.println("Short");
+    }
+    static void methodWide( short i ) {
+        System.out.println("short");
+    }
+    static void methodWide( Long i ) {
+        System.out.println("long");
+    }
+    static void methodWide( long i ) {
+        System.out.println("long");
     }
 
 }

@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 public class Nod {
     public static void main(String[] args) throws IOException, InterruptedException {
+
+
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader reader = new BufferedReader(isr);
         System.out.println("Введите первое целое число: ");
@@ -53,17 +55,19 @@ public class Nod {
         }
         if (arrayList.size() < arrayList1.size()) {
             for (Integer i : arrayList) {
-                if (arrayList1.indexOf(i) != -1) {
+                if (arrayList1.contains(i)) {
                     nod = i;
                 }
             }
         } else {
             for (Integer i : arrayList1) {
-                if (arrayList.indexOf(i) != -1) {
+                if (arrayList.contains(i)) {
                     nod = i;
                 }
             }
         }
         System.out.println("Наибольший общий делитель равен " + nod + ".");
+
+
     }
 }
