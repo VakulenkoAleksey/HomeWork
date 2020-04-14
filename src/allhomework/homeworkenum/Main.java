@@ -30,10 +30,10 @@ public class Main {
 //        shop.addStaff(manager3);
 
 
-//        shop.getInfoStaff("ов");  //поиск сотрудника по имени(или фрагменту имени)
-
-//        shop.getInfoStaff(Position.SELLER); //поиск сотрудника по должности
-
-//        shop.getAllInfoStaff(); //вывод информации о всех сотрудниках
+        shop.getInfoStaff("кош");  //поиск сотрудника по имени(или фрагменту имени)
+        System.out.println("*************************************\n");
+        shop.getInfoStaff(Position.SELLER); //поиск сотрудника по должности
+        System.out.println("*************************************\n");
+        shop.getAllInfoStaff(); //вывод информации о всех сотрудниках
     }
 }
