@@ -2,38 +2,37 @@ package allhomework.homeworkenum;
 
 public class Main {
     public static void main(String[] args) {
-        User director = new User("Вакуленко Алексей Валерьевич", Position.DIRECTOR);
-        Shop shop = new Shop("Магазин", director);
+        User director = new User("вакуленко Алексей Валерьевич", Position.DIRECTOR);
+        Store store = new Store("Магазин", director);
 
-        User manager = new User("Петров Петр Петрович", Position.MANAGER);
-        User manager1 = new User("Иванов Иван Иванович", Position.MANAGER);
+        store.newStaff("петров-Рудыковский петр петрович", "М");
+        store.newStaff("Иванов иван Иванович", Position.MANAGER);
 
-        User seller = new User("Пупкин Иван Николаевич", Position.SELLER);
-        User seller1 = new User("Старшов Игорь Васильевич", Position.SELLER);
-        User seller2 = new User("Меньшев Дмитрий Петрович", Position.SELLER);
-        User seller3 = new User("Петров Петр Петрович", Position.SELLER);
-        User seller4 = new User("Сидоров Сергей Валентинович", Position.SELLER);
-        User seller5 = new User("Калашников Константин Дмитриевич", Position.SELLER);
-
-        User courier = new User("Никитин Никита Александрович", Position.COURIER);
-        User courier1 = new User("Кошкин Евгений Александрович", Position.COURIER);
-        User courier2 = new User("Кулаков Борис Борисович", Position.COURIER);
-        User courier3 = new User("Пупкин Денис Витальевич", Position.COURIER);
-        User courier4 = new User("Ракин Сергей Владимирович", Position.COURIER);
-        User courier5 = new User("Поздняк Николай Васильевич", Position.COURIER);
-
-        shop.addAllStaff(manager,manager1,seller,seller1,seller2,seller3,seller4,seller5,
-                courier,courier1,courier2,courier3,courier4,courier5);
+        store.newStaff("Пупкин Иван Николаевич", "п");
+        store.newStaff("Старшов игорь Васильевич", "про");
+        store.newStaff("Меньшев Дмитрий Петрович", "продавец");
+        store.newStaff("петров Петр петрович", Position.SELLER);
+        store.newStaff("сидоров Сергей Валентинович", Position.SELLER);
+        store.newStaff("Калашников константин Дмитриевич", Position.SELLER);
 
 
-//        User manager3 = new User("Поздний Евгений Васильевич", Position.MANAGER);
-//        shop.addStaff(manager3);
+        store.newStaff("Никитин никита александрович", "кур");
+        store.newStaff("Кошкин Евгений Александрович", "к");
+        store.newStaff("Кулаков Борис борисович", "курьер");
+        store.newStaff("Пупкин Денис Витальевич", Position.COURIER);
+        store.newStaff("Ракин Сергей Владимирович", Position.COURIER);
+        store.newStaff("Поздняк Николай Васильевич", Position.COURIER);
 
 
-        shop.getInfoStaff("кош");  //поиск сотрудника по имени(или фрагменту имени)
-        System.out.println("*************************************\n");
-        shop.getInfoStaff(Position.SELLER); //поиск сотрудника по должности
-        System.out.println("*************************************\n");
-        shop.getAllInfoStaff(); //вывод информации о всех сотрудниках
+
+        store.newStaff("Поздний Евгений Васильевич", Position.MANAGER); //менеджер не требуется
+
+
+
+//        store.getInfoStaff("кош");  //поиск сотрудника по имени(или фрагменту имени)
+
+//        store.getInfoStaff(Position.MANAGER); //поиск сотрудника по должности
+
+        store.getAllInfoStaff(); //вывод информации о всех сотрудниках
     }
 }

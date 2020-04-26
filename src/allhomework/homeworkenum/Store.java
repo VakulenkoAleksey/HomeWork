@@ -1,13 +1,13 @@
 package allhomework.homeworkenum;
 
-public class Shop {
-    private String name;
+public class Store {
+    private final String name;
     private User director;
     private final User[] manager = new User[2];
     private final User[] seller = new User[10];
     private final User[] courier = new User[10];
 
-    public Shop(String name, User director) {
+    public Store(String name, User director) {
         this.name = name;
         setDirector(director);
     }
@@ -25,8 +25,6 @@ public class Shop {
             System.out.println(director);
         }
     }
-
-
 
     private void setDirector(User director) {
             this.director = director;
@@ -134,22 +132,59 @@ public class Shop {
         }
         return false;
     }
+    private String checkCase(String fullName){ //проверяет регистр первой буквы в каждом слове
+        StringBuilder stringBuilder = new StringBuilder();
+        fullName = fullName.toLowerCase();
+        String[] s = fullName.split("\\s+|-");
+        for (int i = 0; i < s.length; i++) {
+            String s1 = s[i].substring(0, 1).toUpperCase();
+            String s2 = s[i].substring(1);
+            s[i] = s1+s2;
+        }
+        if (s.length == 3){
+            stringBuilder.append(s[0]).append(" ").append(s[1]).append(" ").append(s[2]);
+        }else {
+            stringBuilder.append(s[0]).append("-").append(s[1]).append(" ").append(s[2]).append(" ").append(s[3]);
+        }
+        return stringBuilder.toString();
+    }
+
+    public void newStaff(String fullName, String position){
+        if (fullName.matches("^[А-я\\-А-я]+\\s[А-я]+\\s[А-я]+?$")) {
+            addStaff(new User(checkCase(fullName), position));
+        }else {
+            System.out.println(fullName+ " не корректно введено ФИО\n");
+        }
+    }
+
+    public void newStaff(String fullName, Position position){
+        if (fullName.matches("^[А-я\\-А-я]+\\s[А-я]+\\s[А-я]+?$")) {
+            addStaff(new User(checkCase(fullName), position));
+        }else {
+            System.out.println(fullName+ " не корректно введено ФИО\n");
+        }
+    }
 
     public void getAllInfoStaff () {
+        System.out.println("Информация о всех сотридниках:\n");
         getInfoDirector();
         getInfoManager();
         getInfoSeller();
         getInfoCourier();
+        System.out.println("*************************************\n");
     }
 
     public void getInfoStaff(String name){
+        System.out.println("Информация о сотриднике:\n");
         getInfoDirector(name);
         getInfoManager(name);
         getInfoSeller(name);
         getInfoCourier(name);
+        System.out.println("*************************************\n");
     }
 
     public void getInfoStaff(Position position) {
+        System.out.println("Сотрудник(и) с должностью " + position.getName().toLowerCase() + ":\n");
         if (position.equals(Position.DIRECTOR)){
             getInfoDirector();
         }else if (position.equals(Position.MANAGER)){
@@ -159,21 +194,10 @@ public class Shop {
         }else if (position.equals(Position.COURIER)){
             getInfoCourier();
         }
+        System.out.println("*************************************\n");
     }
 
-    public void addStaff(User user){
-        if (user.position.equals(Position.MANAGER) && checkManager()){
-            setManager(user);
-        }else if (user.position.equals(Position.SELLER) && checkManager()) {
-            setSeller(user);
-        }else if (user.position.equals(Position.COURIER) && checkManager()) {
-            setCourier(user);
-        }else {
-            System.out.println("Сотрудник " + user.getFulName() + " не требуется.");
-        }
-    }
-
-    public void addAllStaff(User... user){
+    private void addStaff(User... user){
         for (User us: user) {
             if (us.position.equals(Position.MANAGER) && checkManager()) {
                 setManager(us);
@@ -182,7 +206,7 @@ public class Shop {
             } else if (us.position.equals(Position.COURIER) && checkCourier()) {
                 setCourier(us);
             }else {
-                System.out.println("Сотрудник " + us.getFulName() + " не требуется.");
+                System.out.println("Извените, но на должность \""+us.position.getName()+"\" сотрудник не требуется.\n");
             }
         }
     }
