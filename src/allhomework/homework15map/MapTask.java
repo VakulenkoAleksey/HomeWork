@@ -93,33 +93,18 @@ public class MapTask {
                 str[i] = null;
             }
         }
+        String s = null;
         for (int i = 0; i < 10; ) {
             for (Map.Entry<String, Integer> mp : map.entrySet()) {
-                if (mp.getValue() == maxCount) {
-                    System.out.println(mp.getKey());
+                if (mp.getValue().equals(Collections.max(map.values()))){
+                    s = mp.getKey();
+                    System.out.println(mp.getKey() + ": " + mp.getValue());
                     i++;
-                    if (i == 10) {
-                        break;
-                    }
+                    break;
                 }
             }
-            maxCount--;
+            map.remove(s);
         }
-//        boolean bl = true;
-//        int i = 0;
-//        while (bl){
-//            for (Map.Entry<String, Integer> mp : map.entrySet()) {
-//                if (mp.getValue() == maxCount){
-//                    System.out.println(mp.getKey());
-//                    i++;
-//                    if (i == 10){
-//                        bl = false;
-//                        break;
-//                    }
-//                }
-//            }
-//            maxCount--;
-//        }
     }
 
     public static void getNumberOfLetters(String text) {
