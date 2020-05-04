@@ -193,11 +193,11 @@ public class MapTask {
                 "packages and web page editors now use Lorem Ipsum as their default model text and a search for lorem ipsum will " +
                 "uncover many web sites still uncover in their infancy Various versions uncover have evolved over the years uncover sometimes by accident" +
                 " sometimes on purpose injected humour and the like"; // !!! в тексте содержатся только буквы и пробельные символы !!!
-//        System.out.println(getWordCount(text, "a"));
+        System.out.println(getWordCount(text, " it "));
 //        for (Map.Entry<Integer, ArrayList<String>> map: getGroupOfWords(text).entrySet()){
 //            System.out.println(map);
 //        }
-        getRepeatingWords(text);
+//        getRepeatingWords(text);
 //        getNumberOfLetters(text);
 
     }

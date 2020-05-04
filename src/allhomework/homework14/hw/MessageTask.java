@@ -51,6 +51,7 @@ public class MessageTask {
     private static void uniqueMessageCount(List<Message> messageList) {
         // TODO: Подсчитать количество уникальных сообщений
         //  Ответ в консоль
+        //hashset
         List<Message> messages = new ArrayList<>();
         for (int i = 0; i<messageList.size(); ) {
             if (Collections.frequency(messageList, messageList.get(i)) == 1){
