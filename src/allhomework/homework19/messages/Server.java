@@ -39,12 +39,12 @@ public class Server {
                         connection.sendMessage(SimpleMessage.getInstance(text));
                         break;
                     case "/count":
-                        String count = countConnections + " подключений к серверу";
+                        String count ="Кол-во подключений к серверу: " + countConnections;
                         connection.sendMessage(SimpleMessage.getInstance(count));
                         break;
                     case "/ping":
                         long time = ChronoUnit.MILLIS.between(message.getDateTime(), LocalDateTime.now());
-                        String mls = time + " MILLIS";
+                        String mls = "Время отклика сервера: " + time + "milliseconds";
                         connection.sendMessage(SimpleMessage.getInstance(mls));
                         break;
                     default:

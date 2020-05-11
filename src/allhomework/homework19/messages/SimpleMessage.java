@@ -42,7 +42,7 @@ public class SimpleMessage implements Serializable {
             return "SimpleMessage{" +
                     "sender='" + sender + '\'' +
                     ", text='" + text + '\'' +
-                    ", dateTime=" + dateTime +
+                    ", dateTime=" + dateTime.withNano(0) +
                     '}';
         }else {
             return text;

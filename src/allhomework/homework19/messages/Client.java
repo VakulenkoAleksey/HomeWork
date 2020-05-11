@@ -30,12 +30,6 @@ public class Client {
     }
 
     public void start() throws Exception {
-        /*
-        help - список доступных комент
-        count -
-        exit - выход из вайл
-        */
-//        System.out.println("Введите \"/help\" для полчения списока доступных команд");
 
         System.out.println("Введите имя");
         String name = scanner.nextLine();
