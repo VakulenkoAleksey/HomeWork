@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class SimpleMessage implements Serializable {
     private String sender;
@@ -13,6 +14,7 @@ public class SimpleMessage implements Serializable {
     public SimpleMessage(String text) {
         this.text = text;
     }
+
 
     public SimpleMessage(String sender, String text) {
         this.sender = sender;
@@ -54,5 +56,10 @@ public class SimpleMessage implements Serializable {
 
     public static SimpleMessage getInstance(String text){
         return new SimpleMessage(text);
+    }
+
+    public static SimpleMessage getInstance(LocalDateTime time){
+        return new SimpleMessage("Время отклика сервера: " +
+                ChronoUnit.MILLIS.between(time, LocalDateTime.now()) + " milliseconds;");
     }
 }

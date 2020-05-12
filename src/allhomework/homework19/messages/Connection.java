@@ -27,7 +27,8 @@ public class Connection implements AutoCloseable {
         return (SimpleMessage) input.readObject();
     }
 
-// если объект типа Connection создан try-with-resources, при завершении блока try метод close будет вызван автоматически
+// если объект типа Connection создан try-with-resources, при завершении блока try, переопределенный метод close будет
+// вызван автоматически, если Объект имплементирован интерфейсом AutoCloseable
     @Override
     public void close() throws Exception {
         input.close();

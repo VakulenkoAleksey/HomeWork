@@ -43,9 +43,7 @@ public class Server {
                         connection.sendMessage(SimpleMessage.getInstance(count));
                         break;
                     case "/ping":
-                        long time = ChronoUnit.MILLIS.between(message.getDateTime(), LocalDateTime.now());
-                        String mls = "Время отклика сервера: " + time + "milliseconds";
-                        connection.sendMessage(SimpleMessage.getInstance(mls));
+                        connection.sendMessage(SimpleMessage.getInstance(message.getDateTime()));
                         break;
                     default:
                         connection.sendMessage(SimpleMessage.getInstance("Server", "hello"));
